@@ -1,0 +1,402 @@
+:root {
+  --clr-primary: #c8a349;
+  --clr-neutral-400: #fff;
+  --clr-neutral-900: #000;
+  --clr-neutral-700: #999;
+  --clr-neutral-800: #4a4a4a;
+
+  --fw-regular: 400;
+  --fw-semi-bold: 700;
+  --fw-bold: 900;
+
+  --fs-200: 0.75rem;
+  --fs-300: 0.8125rem;
+  --fs-400: 0.875rem;
+  --fs-500: 0.9375rem;
+  --fs-600: 1rem;
+  --fs-700: 1.875rem;
+  --fs-800: 2rem;
+
+  --ls-300: 2.6px;
+  --ls-400: 2.8px;
+
+  --fs-body: var(--fs-400);
+  --fs-primary-heading: var(--fs-800);
+  --fs-secondary-heading: var(--fs-700);
+  --fs-nav: var(--fs-300);
+  --fs-btn: var(--fs-200);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--clr-neutral-400);
+}
+
+body {
+  font-family: "LATO", sans-serif;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility classes */
+
+.text-primary-400 {
+  color: var(--clr-primary);
+}
+
+.text-neutral-100 {
+  color: var(--clr-neutral-400);
+}
+.text-neutral-900 {
+  color: var(--clr-neutral-900);
+}
+.bg-primary-400 {
+  background-color: var(--clr-primary);
+}
+
+.bg-neutral-100 {
+  background-color: var(--clr-neutral-100);
+}
+.bg-neutral-900 {
+  background-color: var(--clr-neutral-900);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fs-primary-heading {
+  font-size: var(--fs-primary-heading);
+}
+.fs-secondary-heading {
+  font-size: var(--fs-secondary-heading);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+.fs-300 {
+  font-size: var(--fs-300);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.home-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+}
+
+.home-header {
+  padding: 3rem 200px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--clr-neutral-400);
+  z-index: 99;
+}
+
+.open-close a {
+  color: var(--clr-neutral-400);
+  font-size: 3rem;
+}
+
+.close {
+  display: none;
+}
+/* .menu a:hover {
+  color: var(--clr-primary);
+
+} */
+
+.cart {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+
+.home-header img {
+  height: 8rem;
+}
+
+.nav {
+  background-color: var(--clr-neutral-400);
+  width: 100%;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 6rem;
+  padding: 5rem 0;
+}
+
+.nav ul li a {
+  color: var(--clr-neutral-800);
+  font-size: var(--fs-500);
+  letter-spacing: 5px;
+  position: relative;
+  font-weight: 700;
+}
+.nav ul li a:hover {
+  color: var(--clr-primary);
+}
+
+.nav ul li a::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--clr-primary);
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all ease-in-out 0.3s;
+}
+
+.nav ul li a:hover::after {
+  width: 20px;
+}
+
+main {
+  display: flex;
+}
+
+aside {
+  width: 600px;
+  height: fit-content;
+  padding: 5rem;
+  gap: 6rem;
+  display: flex;
+  flex-direction: column;
+  color: var(--clr-neutral-800);
+  display: nne;
+}
+
+aside h1 {
+  font-size: var(--fs-700);
+  font-weight: 700;
+  letter-spacing: 8px;
+}
+
+.menu-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  height: auto;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu p {
+  font-size: var(--fs-500);
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.menu p:hover {
+  color: var(--clr-primary);
+}
+
+.menu span {
+  font-size: var(--fs-600);
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.home-box {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-left: 1.5rem;
+  font-size: var(--fs-500);
+  letter-spacing: 2px;
+  display: none;
+}
+
+.log-in {
+  margin-top: 1rem;
+  font-weight: 700;
+   letter-spacing: 2px;
+  cursor: pointer;
+}
+.log-in:hover {
+  color: rgb(251, 44, 44);
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 6rem;
+}
+
+.social-icons a {
+  color: var(--clr-neutral-800);
+}
+.social-icons a:hover {
+  color: var(--clr-primary);
+}
+
+.images-box {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 5rem;
+  font-size: var(--fs-500);
+  font-weight: 500;
+}
+
+.images {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  cursor: pointer;
+}
+.img img:hover {
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  color: #c8a349;
+}
+
+.img-txt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.desc P {
+  color: var(--clr-neutral-800);
+  font-size: 1rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.desc p:hover {
+  color: var(--clr-primary);
+}
+.price {
+  display: flex;
+  gap: 0.3rem;
+  color: var(--clr-neutral-700);
+}
+
+.price P {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.all {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.shirts {
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+}
+.kids {
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+}
+.hoodies {
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+}
